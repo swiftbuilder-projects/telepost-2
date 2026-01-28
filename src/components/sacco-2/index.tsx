@@ -36,12 +36,13 @@ import ProductDetail from './components/ProductDetail';
 import NewsDetail from './components/NewsDetail';
 import WhoWeAre from './components/WhoWeAre';
 
-// For accessing current page in Studio
-import { useStudio } from '@/components/studio/StudioContext';
+// Removed useStudio import to fix circular dependency
+// import { useStudio } from '@/components/studio/StudioContext';
 
 const defaultContent: TelepostSaccoContent = {
     navbar: {
         logoText: 'TELEPOST SACCO',
+        // ... (rest of default content is unchanged, just updating import)
         logoImage: '/images/templates/telepost-sacco/logo.png',
         menuItems: [
             { label: 'Home', href: '/' },
@@ -317,29 +318,15 @@ import { useSearchParams } from 'next/navigation';
 
 export default function Sacco2Template({
     content,
+    pageId
 }: {
     content?: TelepostSaccoContent;
+    pageId?: string;
 }) {
     const data = content || defaultContent;
-    const searchParams = useSearchParams();
 
-    // Determine current page:
-    // 1. Studio Context (highest priority)
-    // 2. URL Query Param (?page=...)
-    // 3. Default to 'home'
-    let currentPage = 'home';
-
-    // Check URL params first
-    const pageParam = searchParams.get('page');
-    if (pageParam) currentPage = pageParam;
-
-    // Check Studio Context
-    try {
-        const studio = useStudio();
-        if (studio.pageId) currentPage = studio.pageId;
-    } catch {
-        // Not in Studio context, ignore
-    }
+    // Determine current page from props or default to 'home'
+    const currentPage = pageId || 'home';
 
     // Render different pages based on current page
     const renderPage = () => {
