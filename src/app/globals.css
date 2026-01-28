@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #f97316;
+    --color-secondary: #eab308;
+    --color-background: #000000;
+    --color-foreground: #ffffff;
+    
+    --font-inter: var(--font-inter);
+    --font-cinzel: var(--font-cinzel);
+    --font-lato: var(--font-lato);
+    --font-playfair: var(--font-playfair);
+}
+
+:root {
+    --background-rgb: 0, 0, 0;
+    --foreground-rgb: 255, 255, 255;
+}
+
+body {
+    color: #000;
+    background: #fff;
+    min-height: 100vh;
+}
+
+/* Custom Utilities copied from SwiftBuilder */
+.text-gradient-primary {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, var(--color-primary), #ffffff, #fb923c);
+}
+
+.glass {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mask-linear-fade {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
