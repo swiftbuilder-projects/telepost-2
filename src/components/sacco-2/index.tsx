@@ -34,7 +34,7 @@ import NewsDetail from './components/NewsDetail';
 import WhoWeAre from './components/WhoWeAre';
 
 // For accessing current page in Studio
-import { useStudio } from '../../components/studio/StudioContextCore';
+import { useStudio } from '@/components/studio/StudioContextCore';
 
 const defaultContent: TelepostSaccoContent = {
     navbar: {
