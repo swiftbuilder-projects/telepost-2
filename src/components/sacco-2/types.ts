@@ -92,7 +92,7 @@ export interface Product {
     ctaText: string;
     ctaLink: string;
     image?: string;
-    category?: 'fosa' | 'bosa';
+    category?: string;
 }
 
 export interface ProductsContent {
