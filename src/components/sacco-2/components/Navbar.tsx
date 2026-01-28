@@ -32,40 +32,43 @@ export default function Navbar({ content }: { content?: NavbarContent }) {
     return (
         <header className="relative z-50">
             {/* Top Bar - Green */}
-            <div className="bg-[#2D8E4E] text-white py-2 px-4 sm:px-6 lg:px-8 border-b border-white/10">
-                <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
+            <div className="bg-[#008000] text-white py-2 border-b border-white/10">
+                <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 px-4 sm:px-6 lg:px-8">
                     {/* Left: Contact Info */}
                     <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 sm:gap-6 text-[12px] font-medium tracking-wide">
-                        <a href="mailto:info@telepostsacco.co.ke" className="flex items-center gap-2 hover:text-[#F1C03C] transition-colors">
+                        <a href="mailto:info@telepostsacco.co.ke" className="flex items-center gap-2 hover:text-[#fff503] transition-colors">
                             <Mail className="w-3.5 h-3.5" />
                             <span>info@telepostsacco.co.ke</span>
                         </a>
                         <div className="hidden sm:block w-px h-3 bg-white/20" />
-                        <a href="tel:0205029200" className="flex items-center gap-2 hover:text-[#F1C03C] transition-colors">
+                        <a href="tel:0205029200" className="flex items-center gap-2 hover:text-[#fff503] transition-colors">
                             <Phone className="w-3.5 h-3.5" />
                             <span>0205029200</span>
                         </a>
-                        <div className="hidden sm:block w-px h-3 bg-white/20" />
-                        <div className="flex items-center gap-2">
-                            <span className="opacity-80">Working Hours: Mon-Fri: 8:30 AM - 4:30 PM</span>
-                        </div>
+
                     </div>
 
                     {/* Right: Actions */}
                     <div className="flex items-center gap-3">
-                        <a
-                            href={ctaLink || '#'}
-                            className="bg-[#E63946] hover:bg-white hover:text-[#E63946] px-4 py-1.5 rounded-sm text-[11px] font-extrabold uppercase transition-all shadow-sm flex items-center gap-2"
-                            data-studio-path="navbar.ctaText"
-                        >
-                            {ctaText}
-                        </a>
+                        <span className="text-[#efff03] text-[11px] font-bold uppercase tracking-wide hidden lg:block">
+                            Working Hours: Mon-Fri: 8:30 AM - 4:30 PM
+                        </span>
+                        <div className="w-px h-6 bg-white/30 hidden lg:block" />
+
                         <a
                             href={secondaryCtaLink || '#'}
-                            className="bg-[#E63946] hover:bg-white hover:text-[#E63946] px-4 py-1.5 rounded-sm text-[11px] font-extrabold uppercase transition-all shadow-sm flex items-center gap-2"
+                            className="bg-[#fff503] hover:bg-white text-black hover:text-black px-4 py-1.5 rounded-sm text-[11px] font-extrabold uppercase transition-all shadow-sm flex items-center gap-2"
                             data-studio-path="navbar.secondaryCtaText"
                         >
                             {secondaryCtaText}
+                        </a>
+                        <div className="w-px h-6 bg-white/30 hidden sm:block" />
+                        <a
+                            href={ctaLink || '#'}
+                            className="bg-[#fff503] hover:bg-white text-black hover:text-black px-4 py-1.5 rounded-sm text-[11px] font-extrabold uppercase transition-all shadow-sm flex items-center gap-2"
+                            data-studio-path="navbar.ctaText"
+                        >
+                            {ctaText}
                         </a>
                     </div>
                 </div>
@@ -97,7 +100,7 @@ export default function Navbar({ content }: { content?: NavbarContent }) {
                                 >
                                     <a
                                         href={item.href}
-                                        className="flex items-center gap-1 text-[#444] font-bold text-sm uppercase hover:text-[#2D8E4E] py-8 border-b-2 border-transparent hover:border-[#2D8E4E] transition-all"
+                                        className="flex items-center gap-1 text-[#444] font-bold text-sm uppercase hover:text-[#008000] py-8 border-b-2 border-transparent hover:border-[#008000] transition-all"
                                         data-studio-path={`navbar.menuItems.${index}.label`}
                                     >
                                         {item.label}
@@ -106,12 +109,12 @@ export default function Navbar({ content }: { content?: NavbarContent }) {
 
                                     {/* Submenu */}
                                     {item.submenu && (
-                                        <div className="absolute top-full left-0 w-64 bg-white shadow-xl border-t-2 border-[#2D8E4E] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                        <div className="absolute top-full left-0 w-64 bg-white shadow-xl border-t-2 border-[#008000] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                                             {item.submenu.map((subItem, subIndex) => (
                                                 <a
                                                     key={subIndex}
                                                     href={subItem.href}
-                                                    className="block px-6 py-3 text-sm text-gray-600 hover:text-[#2D8E4E] hover:bg-gray-50 border-b border-gray-100 last:border-0"
+                                                    className="block px-6 py-3 text-sm text-gray-600 hover:text-[#008000] hover:bg-gray-50 border-b border-gray-100 last:border-0"
                                                     data-studio-path={`navbar.menuItems.${index}.submenu.${subIndex}.label`}
                                                 >
                                                     {subItem.label}
@@ -123,7 +126,7 @@ export default function Navbar({ content }: { content?: NavbarContent }) {
                             ))}
 
                             {/* Search Icon */}
-                            <button className="text-gray-400 hover:text-[#2D8E4E] transition-colors">
+                            <button className="text-gray-400 hover:text-[#008000] transition-colors">
                                 <Search className="w-5 h-5" />
                             </button>
                         </div>
@@ -131,7 +134,7 @@ export default function Navbar({ content }: { content?: NavbarContent }) {
                         {/* Mobile Menu Button */}
                         <button
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            className="lg:hidden p-2 text-gray-600 hover:text-[#2D8E4E]"
+                            className="lg:hidden p-2 text-gray-600 hover:text-[#008000]"
                         >
                             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                         </button>
@@ -154,7 +157,7 @@ export default function Navbar({ content }: { content?: NavbarContent }) {
                                     <div className="flex items-center justify-between">
                                         <a
                                             href={item.href}
-                                            className="block text-[#444] font-bold uppercase py-2 hover:text-[#2D8E4E]"
+                                            className="block text-[#444] font-bold uppercase py-2 hover:text-[#008000]"
                                         >
                                             {item.label}
                                         </a>
@@ -163,7 +166,7 @@ export default function Navbar({ content }: { content?: NavbarContent }) {
                                         )}
                                     </div>
                                     {item.submenu && (
-                                        <div className="pl-4 mt-2 space-y-2 border-l-2 border-[#2D8E4E]/20">
+                                        <div className="pl-4 mt-2 space-y-2 border-l-2 border-[#008000]/20">
                                             {item.submenu.map((subItem, subIndex) => (
                                                 <a
                                                     key={subIndex}

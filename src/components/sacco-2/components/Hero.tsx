@@ -106,7 +106,7 @@ export default function Hero({ content }: { content?: HeroContent }) {
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3 }}
-                            className="inline-block bg-[#F1C03C] text-black px-5 py-1.5 rounded-sm text-xs font-black tracking-[0.2em] uppercase mb-8 shadow-lg"
+                            className="inline-block bg-[#fff503] text-black px-5 py-1.5 rounded-sm text-xs font-black tracking-[0.2em] uppercase mb-8 shadow-lg"
                         >
                             {data.badgeText}
                         </motion.span>
@@ -121,7 +121,7 @@ export default function Hero({ content }: { content?: HeroContent }) {
 
                         {/* Highlighted Subtext (Telepost Style) */}
                         {slides[currentSlide].highlightedText && (
-                            <div className="inline-block bg-[#E63946] px-8 py-2.5 mb-10 shadow-xl">
+                            <div className="inline-block bg-[#ff0000] px-8 py-2.5 mb-10 shadow-xl">
                                 <span
                                     className="block text-sm sm:text-base font-black text-white tracking-[0.15em] uppercase"
                                     data-studio-path={`hero.slides.${currentSlide}.highlightedText`}
@@ -143,7 +143,7 @@ export default function Hero({ content }: { content?: HeroContent }) {
                         <div className={`flex flex-col sm:flex-row items-center gap-4 ${slides[currentSlide].align === 'left' ? 'justify-start' : slides[currentSlide].align === 'right' ? 'justify-end' : 'justify-center'}`}>
                             <a
                                 href={slides[currentSlide].primaryCtaLink}
-                                className="inline-block bg-[#2D8E4E] text-white px-12 py-4 rounded-full font-black text-sm uppercase tracking-widest hover:bg-[#236c3b] transition-all transform hover:-translate-y-1 hover:shadow-2xl border-2 border-[#2D8E4E]"
+                                className="inline-block bg-[#008000] text-white px-12 py-4 rounded-full font-black text-sm uppercase tracking-widest hover:bg-[#236c3b] transition-all transform hover:-translate-y-1 hover:shadow-2xl border-2 border-[#008000]"
                                 data-studio-path={`hero.slides.${currentSlide}.primaryCtaText`}
                             >
                                 {slides[currentSlide].primaryCtaText}
@@ -158,7 +158,7 @@ export default function Hero({ content }: { content?: HeroContent }) {
                         <button
                             key={idx}
                             onClick={() => setCurrentSlide(idx)}
-                            className={`h-1.5 rounded-full transition-all duration-500 ${idx === currentSlide ? 'bg-[#E63946] w-12' : 'bg-white/30 w-6 hover:bg-white/60'
+                            className={`h-1.5 rounded-full transition-all duration-500 ${idx === currentSlide ? 'bg-[#ff0000] w-12' : 'bg-white/30 w-6 hover:bg-white/60'
                                 }`}
                         />
                     ))}
@@ -211,21 +211,21 @@ export default function Hero({ content }: { content?: HeroContent }) {
                     >
                         {/* Badge */}
                         {data.badgeText && (
-                            <span className="inline-block bg-[#F1C03C] text-[#333] px-4 py-1 rounded-sm text-sm font-bold tracking-widest uppercase mb-6">
+                            <span className="inline-block bg-[#fff503] text-[#333] px-4 py-1 rounded-sm text-sm font-bold tracking-widest uppercase mb-6">
                                 {data.badgeText}
                             </span>
                         )}
 
                         {/* Title */}
                         <h1
-                            className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[#E63946] leading-tight mb-4"
+                            className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[#ff0000] leading-tight mb-4"
                             data-studio-path="hero.title"
                         >
                             {data.title}
                         </h1>
 
                         {/* Highlighted Subtext (Red Box) */}
-                        <div className="inline-block bg-[#E63946] px-6 py-2 mb-8 transform -skew-x-12 shadow-md">
+                        <div className="inline-block bg-[#ff0000] px-6 py-2 mb-8 transform -skew-x-12 shadow-md">
                             <span
                                 className="block text-2xl sm:text-3xl font-bold text-white uppercase transform skew-x-12"
                                 data-studio-path="hero.highlightedText"
@@ -245,7 +245,7 @@ export default function Hero({ content }: { content?: HeroContent }) {
                         {/* CTA Button */}
                         <a
                             href={data.primaryCtaLink}
-                            className="inline-block bg-[#2D8E4E] text-white px-10 py-4 rounded-full font-bold uppercase tracking-wider hover:bg-[#236c3b] transition-all transform hover:-translate-y-1 hover:shadow-lg border-2 border-[#2D8E4E]"
+                            className="inline-block bg-[#008000] text-white px-10 py-4 rounded-full font-bold uppercase tracking-wider hover:bg-[#236c3b] transition-all transform hover:-translate-y-1 hover:shadow-lg border-2 border-[#008000]"
                             data-studio-path="hero.primaryCtaText"
                         >
                             {data.primaryCtaText}
@@ -256,12 +256,12 @@ export default function Hero({ content }: { content?: HeroContent }) {
 
             {/* Simulated Slider Controls */}
             <div className="absolute top-1/2 left-4 md:left-8 transform -translate-y-1/2 z-20 hidden md:block">
-                <button className="w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-[#2D8E4E] transition-all">
+                <button className="w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-[#008000] transition-all">
                     <ArrowLeft className="w-6 h-6" />
                 </button>
             </div>
             <div className="absolute top-1/2 right-4 md:right-8 transform -translate-y-1/2 z-20 hidden md:block">
-                <button className="w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-[#2D8E4E] transition-all">
+                <button className="w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-[#008000] transition-all">
                     <ArrowRight className="w-6 h-6" />
                 </button>
             </div>

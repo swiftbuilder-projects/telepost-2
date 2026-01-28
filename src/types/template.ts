@@ -208,11 +208,13 @@ export interface MikayiNavbarProps {
 export interface MikayiHeroProps {
     badgeText?: string;
     title: string;
+    titleItalic?: string;
     highlightedText?: string;
     description: string;
     ctaText: string;
     ctaLink: string;
     rating?: number;
+    reviewText?: string;
     ratingCount?: number;
     statsCards?: Array<{
         label: string;

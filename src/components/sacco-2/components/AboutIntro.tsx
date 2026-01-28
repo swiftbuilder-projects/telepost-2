@@ -43,8 +43,8 @@ export default function AboutIntro({ content }: { content?: AboutIntroContent })
                     {/* Left: Welcome & Video */}
                     <div className="space-y-6">
                         <div className="space-y-2">
-                            <div className="w-12 h-1 bg-[#2D8E4E]" />
-                            <h2 className="text-xl font-bold text-gray-800 tracking-tight" data-studio-path="aboutIntro.welcomeTitle">
+                            <div className="w-12 h-1 bg-[#008000]" />
+                            <h2 className="text-2xl font-extrabold text-gray-800 tracking-tight" data-studio-path="aboutIntro.welcomeTitle">
                                 {data.welcomeTitle}
                             </h2>
                         </div>
@@ -62,7 +62,7 @@ export default function AboutIntro({ content }: { content?: AboutIntroContent })
                                 data-studio-path="aboutIntro.videoThumbnail"
                             />
                             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                                <div className="w-20 h-20 bg-[#E63946] rounded-full flex items-center justify-center text-white shadow-xl transform transition-transform group-hover:scale-110">
+                                <div className="w-20 h-20 bg-[#ff0000] rounded-full flex items-center justify-center text-white shadow-xl transform transition-transform group-hover:scale-110">
                                     <Play className="w-8 h-8 fill-current" />
                                 </div>
                             </div>
@@ -83,12 +83,12 @@ export default function AboutIntro({ content }: { content?: AboutIntroContent })
                                     href="https://www.youtube.com/@telepostsacco7699"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="font-bold underline hover:text-[#E63946] transition-colors"
+                                    className="font-bold underline hover:text-[#ff0000] transition-colors"
                                 >
                                     Watch on YouTube
                                 </a>
                             </div>
-                            <div className="text-[#2D8E4E] font-bold">www.telepostsacco.co.ke</div>
+                            <div className="text-[#008000] font-bold">www.telepostsacco.co.ke</div>
                         </div>
                     </div>
 
@@ -96,10 +96,10 @@ export default function AboutIntro({ content }: { content?: AboutIntroContent })
                     <div className="space-y-8">
                         <div className="space-y-4">
                             <div className="flex gap-2">
-                                <div className="w-10 h-1 bg-[#2D8E4E]" />
-                                <div className="w-2 h-1 bg-[#E63946]" />
+                                <div className="w-10 h-1 bg-[#008000]" />
+                                <div className="w-2 h-1 bg-[#ff0000]" />
                             </div>
-                            <h2 className="text-xl font-bold text-gray-800 tracking-tight" data-studio-path="aboutIntro.aboutTitle">
+                            <h2 className="text-2xl font-extrabold text-gray-800 tracking-tight" data-studio-path="aboutIntro.aboutTitle">
                                 {data.aboutTitle}
                             </h2>
                             <p className="text-gray-600 leading-relaxed text-sm" data-studio-path="aboutIntro.aboutDescription">
@@ -116,9 +116,9 @@ export default function AboutIntro({ content }: { content?: AboutIntroContent })
                                         initial={{ opacity: 0, x: 20 }}
                                         whileInView={{ opacity: 1, x: 0 }}
                                         transition={{ delay: index * 0.1 }}
-                                        className="bg-gray-50/80 border-l-4 border-[#2D8E4E] border border-gray-100/50 rounded-r-lg p-6 flex items-center gap-6 group hover:bg-white hover:shadow-xl transition-all cursor-pointer"
+                                        className="bg-gray-50/80 border-l-4 border-[#008000] border border-gray-100/50 rounded-r-lg p-6 flex items-center gap-6 group hover:bg-white hover:shadow-xl transition-all cursor-pointer"
                                     >
-                                        <div className="w-14 h-14 bg-white rounded-lg flex items-center justify-center shadow-sm text-[#2D8E4E] group-hover:bg-[#2D8E4E] group-hover:text-white transition-all">
+                                        <div className="w-14 h-14 bg-white rounded-lg flex items-center justify-center shadow-sm text-[#008000] group-hover:bg-[#008000] group-hover:text-white transition-all">
                                             <Icon className="w-7 h-7" />
                                         </div>
                                         <div className="flex-1">
@@ -126,7 +126,7 @@ export default function AboutIntro({ content }: { content?: AboutIntroContent })
                                                 {card.title}
                                             </h3>
                                             <p className="text-gray-500 text-sm italic" data-studio-path={`aboutIntro.infoCards.${index}.description`}>
-                                                {card.description} <span className="text-[#E63946] font-bold not-italic hover:underline ml-1">{card.ctaText}</span>
+                                                {card.description} <span className="text-[#ff0000] font-bold not-italic hover:underline ml-1">{card.ctaText}</span>
                                             </p>
                                         </div>
                                     </motion.div>

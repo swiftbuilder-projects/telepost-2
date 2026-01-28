@@ -12,6 +12,9 @@ import { TelepostSaccoContent } from './types';
 
 // Homepage Components
 import Navbar from './components/Navbar';
+import { FloatingSocialBar } from './components/FloatingSocialBar';
+import WhatsAppChat from './components/WhatsAppChat';
+
 import Hero from './components/Hero';
 import TrustBar from './components/TrustBar';
 import Products from './components/Products';
@@ -34,7 +37,7 @@ import NewsDetail from './components/NewsDetail';
 import WhoWeAre from './components/WhoWeAre';
 
 // For accessing current page in Studio
-import { useStudio } from '@/components/studio/StudioContextCore';
+import { useStudio } from '../../components/studio/StudioContext';
 
 const defaultContent: TelepostSaccoContent = {
     navbar: {
@@ -43,18 +46,7 @@ const defaultContent: TelepostSaccoContent = {
         menuItems: [
             { label: 'Home', href: '/' },
             {
-                label: 'Products',
-                href: '/products',
-                submenu: [
-                    { label: 'Development Loan', href: '/products/development-loan' },
-                    { label: 'Emergency Loan', href: '/products/emergency-loan' },
-                    { label: 'School Fees Loan', href: '/products/school-fees' },
-                    { label: 'Biashara Plus', href: '/products/biashara-plus' },
-                    { label: 'Savings Accounts', href: '/products/savings' },
-                ],
-            },
-            {
-                label: 'About',
+                label: 'About US',
                 href: '/about',
                 submenu: [
                     { label: 'Who We Are', href: '/about/who-we-are' },
@@ -62,13 +54,35 @@ const defaultContent: TelepostSaccoContent = {
                     { label: 'Awards', href: '/about/awards' },
                 ],
             },
-            { label: 'Resources', href: '/resources' },
-            { label: 'News', href: '/news' },
-            { label: 'Contact', href: '/contact' },
+            {
+                label: 'Product & Services',
+                href: '/products',
+                submenu: [
+                    { label: 'Long Terms Loan Facilities', href: '/products/long-term-loans' },
+                    { label: 'Short Terms Loan Facilities', href: '/products/short-term-loans' },
+                    { label: 'Savings Products', href: '/products/savings' },
+                    { label: 'Deposit Product', href: '/products/deposits' },
+                    { label: 'Our Services', href: '/products/services' },
+                ],
+            },
+            {
+                label: 'Info Center',
+                href: '/info',
+                submenu: [
+                    { label: 'News', href: '/news' },
+                    { label: 'Downloads', href: '/downloads' },
+                    { label: 'FAQ', href: '/faq' },
+                    { label: 'Tenders', href: '/tenders' },
+                    { label: 'Careers', href: '/careers' },
+                ],
+            },
+            { label: 'Loan Calculator', href: '/calculator' },
+            { label: 'Members Portal', href: 'https://portal.telepostsacco.co.ke' },
+            { label: 'Contacts', href: '/contact' },
         ],
-        ctaText: 'Member Login',
-        ctaLink: '/portal/login',
-        secondaryCtaText: 'Join Us',
+        ctaText: 'MOBILE APP',
+        ctaLink: '#mobile-app',
+        secondaryCtaText: 'JOIN US!',
         secondaryCtaLink: '/join',
     },
     hero: {
@@ -84,9 +98,9 @@ const defaultContent: TelepostSaccoContent = {
         slides: [
             {
                 image: '/images/templates/telepost-sacco/hero-agm-v2.png',
-                title: 'WELCOME TO TELEPOST SACCO',
-                highlightedText: 'YOUR TRUSTED FINANCIAL PARTNER',
-                description: 'Building a stronger future together through cooperative excellence and member-focused growth.',
+                title: 'TELEPOST SACCO',
+                highlightedText: 'TOGETHER WE GROW',
+                description: '',
                 primaryCtaText: 'LEARN MORE',
                 primaryCtaLink: '#about',
                 objectPosition: 'top center'
@@ -234,12 +248,25 @@ const defaultContent: TelepostSaccoContent = {
         tagline: 'Together We Grow',
         description: 'Empowering our members through accessible financial services and fostering economic growth since 1969.',
         services: [
-            { label: 'Deposit Savings', href: '#savings' },
-            { label: 'Development Loans', href: '#loans' },
-            { label: 'Emergency Loans', href: '#loans' },
-            { label: 'FOSA Services', href: '#fosa' },
-            { label: 'BOSA Services', href: '#bosa' },
-            { label: 'Mobile Banking', href: '#banking' },
+            { label: 'Long Terms Loan Facilities', href: '/products/long-term-loans' },
+            { label: 'Short Terms Loan Facilities', href: '/products/short-term-loans' },
+            { label: 'Savings Products', href: '/products/savings' },
+            { label: 'Deposit Product', href: '/products/deposits' },
+            { label: 'Our Services', href: '/products/services' },
+        ],
+        aboutLinks: [
+            { label: 'Who We Are', href: '/about/who-we-are' },
+            { label: 'Our History', href: '/about/history' },
+            { label: 'Our Team', href: '/about/team' },
+            { label: 'CSR', href: '/about/csr' },
+            { label: 'Gallery/Awards', href: '/about/gallery' },
+        ],
+        infoLinks: [
+            { label: 'News', href: '/news' },
+            { label: 'Downloads', href: '/downloads' },
+            { label: 'FAQ', href: '/faq' },
+            { label: 'Tenders', href: '/tenders' },
+            { label: 'Careers', href: '/careers' },
         ],
         contactInfo: {
             companyName: 'Telepost Sacco Society Limited',
@@ -527,6 +554,74 @@ export default function Sacco2Template({
                     </>
                 );
 
+
+            case 'info':
+                return (
+                    <>
+                        <PageHero content={{
+                            title: 'Info Center',
+                            description: 'Latest news, updates and resources from Telepost Sacco',
+                            breadcrumbs: [
+                                { label: 'Home', href: '/' },
+                                { label: 'Info Center', href: '/info' }
+                            ]
+                        }} />
+                        <News content={data.news} />
+                    </>
+                );
+
+            case 'downloads':
+                return (
+                    <>
+                        <PageHero content={{
+                            title: 'Downloads',
+                            description: 'Access forms, reports and other important documents',
+                            breadcrumbs: [
+                                { label: 'Home', href: '/' },
+                                { label: 'Downloads', href: '/downloads' }
+                            ]
+                        }} />
+                        <div className="py-20 max-w-7xl mx-auto px-4">
+                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {[
+                                    'Membership Application Form',
+                                    'Loan Application Form',
+                                    'FOSA Account Opening Form',
+                                    'Mobile Banking Form',
+                                    'Dividend Authorization Form',
+                                    'Nominee Update Form'
+                                ].map((item, i) => (
+                                    <div key={i} className="p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow bg-gray-50 flex items-center justify-between group cursor-pointer">
+                                        <div className="flex items-center gap-4">
+                                            <div className="bg-white p-3 rounded-md shadow-sm text-red-500">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><polyline points="14 2 14 8 20 8" /><path d="M12 18v-6" /><path d="M9 15l3 3 3-3" /></svg>
+                                            </div>
+                                            <span className="font-bold text-gray-800 group-hover:text-[#ff0000] transition-colors">{item}</span>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </>
+                );
+
+            case 'calculator':
+                return (
+                    <>
+                        <PageHero content={{
+                            title: 'Loan Calculator',
+                            description: 'Plan your finances with our easy-to-use loan calculator',
+                            breadcrumbs: [
+                                { label: 'Home', href: '/' },
+                                { label: 'Loan Calculator', href: '/calculator' }
+                            ]
+                        }} />
+                        <div className="py-12">
+                            <Calculator content={data.calculator} />
+                        </div>
+                    </>
+                );
+
             default:
                 // Default to homepage for unknown pages
                 return (
@@ -545,9 +640,12 @@ export default function Sacco2Template({
     };
 
     return (
-        <div className="min-h-screen bg-white text-gray-900 font-sans">
+        <div className="min-h-screen bg-white text-gray-900 font-nunito">
             {/* Navbar - Always visible */}
             <Navbar content={data.navbar} />
+            <FloatingSocialBar />
+            <WhatsAppChat />
+
 
             {/* Page Content - Changes based on current page */}
             {renderPage()}

@@ -31,7 +31,7 @@ export default function WhoWeAre({ content }: { content?: WhoWeAreContent }) {
     const data = content || defaultContent;
 
     return (
-        <div className="bg-white font-sans" data-studio-path="whoWeAre">
+        <div className="bg-white" data-studio-path="whoWeAre">
 
             {/* 
               SECTION 1: Introduction 
@@ -71,13 +71,13 @@ export default function WhoWeAre({ content }: { content?: WhoWeAreContent }) {
                                  Let's stick to the specific screenshot 'Introduction' style: Text with red underline.
                              */}
                             <div className="flex gap-2 mb-2">
-                                <div className="w-8 h-1 bg-[#2D8E4E]" />
-                                <div className="w-2 h-1 bg-[#2D8E4E]" />
+                                <div className="w-8 h-1 bg-[#008000]" />
+                                <div className="w-2 h-1 bg-[#008000]" />
                             </div>
 
                             <h2 className="text-3xl font-extrabold text-[#111] inline-block relative pb-2" data-studio-path="whoWeAre.title">
                                 {data.title}
-                                <span className="absolute bottom-0 left-0 w-1/3 h-1 bg-[#E63946]" />
+                                <span className="absolute bottom-0 left-0 w-1/3 h-1 bg-[#ff0000]" />
                             </h2>
                         </div>
 
@@ -111,9 +111,9 @@ export default function WhoWeAre({ content }: { content?: WhoWeAreContent }) {
                     >
                         {/* Title */}
                         <div>
-                            <h2 className="text-3xl font-extrabold text-[#E63946] inline-block relative pb-2">
+                            <h2 className="text-3xl font-extrabold text-[#ff0000] inline-block relative pb-2">
                                 Vision and Mission
-                                <span className="absolute bottom-0 left-0 w-16 h-1 bg-[#E63946]" />
+                                <span className="absolute bottom-0 left-0 w-16 h-1 bg-[#ff0000]" />
                             </h2>
                         </div>
 
@@ -141,9 +141,9 @@ export default function WhoWeAre({ content }: { content?: WhoWeAreContent }) {
 
                         {/* Motto */}
                         <div className="space-y-2">
-                            <h3 className="text-2xl font-bold text-[#E63946] inline-block relative pb-2">
+                            <h3 className="text-2xl font-bold text-[#ff0000] inline-block relative pb-2">
                                 Our Motto:
-                                <span className="absolute bottom-0 left-0 w-12 h-1 bg-[#E63946]" />
+                                <span className="absolute bottom-0 left-0 w-12 h-1 bg-[#ff0000]" />
                             </h3>
                             <p className="text-gray-700 font-medium" data-studio-path="whoWeAre.motto">
                                 {data.motto}
@@ -153,9 +153,9 @@ export default function WhoWeAre({ content }: { content?: WhoWeAreContent }) {
 
                         {/* Core Values */}
                         <div className="space-y-4">
-                            <h3 className="text-2xl font-bold text-[#E63946] inline-block relative pb-2">
+                            <h3 className="text-2xl font-bold text-[#ff0000] inline-block relative pb-2">
                                 Core Values:
-                                <span className="absolute bottom-0 left-0 w-12 h-1 bg-[#E63946]" />
+                                <span className="absolute bottom-0 left-0 w-12 h-1 bg-[#ff0000]" />
                             </h3>
                             <div className="space-y-1" data-studio-path="whoWeAre.coreValues.description">
                                 {data.coreValues.description.split('\n').map((val, i) => (
@@ -184,7 +184,7 @@ export default function WhoWeAre({ content }: { content?: WhoWeAreContent }) {
                                 className="h-full w-full object-cover"
                             />
                             {/* Green Tint Overlay */}
-                            <div className="absolute inset-0 bg-[#2D8E4E]/40 mix-blend-multiply" />
+                            <div className="absolute inset-0 bg-[#008000]/40 mix-blend-multiply" />
                         </div>
                     </motion.div>
                 </div>

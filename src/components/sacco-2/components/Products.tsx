@@ -74,11 +74,11 @@ export default function Products({ content }: { content?: ProductsContent }) {
     const featuredProducts = products.slice(0, 3);
 
     return (
-        <section className="relative pt-12 pb-24 bg-[#E63946]" data-studio-path="products">
+        <section className="relative pt-12 pb-8 bg-[#fff503]" data-studio-path="products">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* 1. Feature Cards Grid (Top) */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 -mt-32 relative z-20 mb-20">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 -mt-32 relative z-20 mb-8">
                     {featuredProducts.map((product, index) => {
                         const Icon = iconMap[product.icon] || Home;
                         return (
@@ -102,7 +102,7 @@ export default function Products({ content }: { content?: ProductsContent }) {
                                                 transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
                                                 className="absolute inset-4"
                                             >
-                                                <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#E63946] border-2 border-white shadow-sm" />
+                                                <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#ff0000] border-2 border-white shadow-sm" />
                                             </motion.div>
 
                                             {/* Outer Orbit Line - Ultra thin & Crisp */}
@@ -112,7 +112,7 @@ export default function Products({ content }: { content?: ProductsContent }) {
                                                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                                                 className="absolute inset-0"
                                             >
-                                                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-[#E63946] border-2 border-white shadow-sm" />
+                                                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-[#ff0000] border-2 border-white shadow-sm" />
                                             </motion.div>
                                         </div>
 
@@ -135,7 +135,7 @@ export default function Products({ content }: { content?: ProductsContent }) {
                                                 className="absolute top-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/80 to-transparent -skew-x-45 pointer-events-none z-20"
                                             />
 
-                                            <div className="w-full h-full bg-[#2D8E4E] flex items-center justify-center relative overflow-hidden">
+                                            <div className="w-full h-full bg-[#008000] flex items-center justify-center relative overflow-hidden">
                                                 {/* Deep background for contrast */}
                                                 <div className="absolute inset-0 bg-gradient-to-tr from-black/10 to-transparent" />
                                                 <Icon className="w-14 h-14 text-white relative z-10" />
@@ -147,7 +147,7 @@ export default function Products({ content }: { content?: ProductsContent }) {
                                     </div>
                                 </div>
 
-                                <h3 className="text-xl font-bold text-gray-900 mb-5 tracking-tight px-4 leading-tight group-hover:text-[#2D8E4E] transition-colors duration-300">
+                                <h3 className="text-xl font-bold text-gray-900 mb-5 tracking-tight px-4 leading-tight group-hover:text-[#008000] transition-colors duration-300">
                                     {product.title}
                                 </h3>
 
@@ -160,7 +160,7 @@ export default function Products({ content }: { content?: ProductsContent }) {
                                         href={product.ctaLink}
                                         whileHover={{ y: -2 }}
                                         whileTap={{ scale: 0.98 }}
-                                        className="inline-flex items-center justify-center w-full gap-2 text-xs font-bold text-[#2D8E4E] uppercase tracking-[0.2em] py-4 border-t border-gray-100 group-hover:bg-[#2D8E4E]/5 transition-all duration-300"
+                                        className="inline-flex items-center justify-center w-full gap-2 text-xs font-bold text-[#008000] uppercase tracking-[0.2em] py-4 border-t border-gray-100 group-hover:bg-[#008000]/5 transition-all duration-300"
                                     >
                                         {product.ctaText}
                                         <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

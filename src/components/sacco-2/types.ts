@@ -301,6 +301,8 @@ export interface FooterContent {
     tagline: string;
     description: string;
     services: FooterLink[];
+    aboutLinks: FooterLink[];
+    infoLinks: FooterLink[];
     contactInfo: FooterContactInfo;
     socialLinks: SocialLink[];
     copyright: string;

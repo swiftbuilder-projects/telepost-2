@@ -24,7 +24,7 @@ export default function Partners({ content }: { content?: PartnersContent }) {
         <section className="py-16 bg-gray-50 border-y border-gray-100" data-studio-path="partners">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
-                    <h2 className="text-2xl font-serif text-gray-800" data-studio-path="partners.title">
+                    <h2 className="text-3xl font-extrabold text-gray-800" data-studio-path="partners.title">
                         {data.title}
                     </h2>
                 </div>
@@ -51,7 +51,7 @@ export default function Partners({ content }: { content?: PartnersContent }) {
                         {allPartners?.map((partner, index) => (
                             <div
                                 key={index}
-                                className="flex-shrink-0 w-48 h-24 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300"
+                                className="flex-shrink-0 w-48 h-24 flex items-center justify-center transition-all duration-300"
                                 data-studio-path={`partners.partners.${index % data.partners.length}.logo`}
                             >
                                 <img

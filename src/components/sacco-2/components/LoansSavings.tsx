@@ -30,12 +30,12 @@ const defaultContent: LoansSavingsContent = {
         }
     ],
     circleFeatures: [
-        { title: 'Core Values', description: '• Respect\n• Teamwork\n• Integrity\n• Quality service\n• Innovation and Creativity', icon: 'heart', color: '#E63946' },
+        { title: 'Core Values', description: '• Respect\n• Teamwork\n• Integrity\n• Quality service\n• Innovation and Creativity', icon: 'heart', color: '#ff0000' },
         { title: 'Mobile Banking', description: '1. Dial *882# on your mobile device.\n2. Select the account type you wish to check balance i.e. for savings account enter 1 or enter 3 to check loan Balance.\n3. Enter your Mobile Banking PIN and press send.', icon: 'phone', color: '#2E5BFF' },
-        { title: 'Our Membership', description: 'We currently draw 4,359 members from organizations including Telkom Kenya, Postal Corporation, Multimedia University, Prime Telecoms, Pensioners, and more. Spouses and dependents are also welcome.', icon: 'users', color: '#F1C03C' },
+        { title: 'Our Membership', description: 'We currently draw 4,359 members from organizations including Telkom Kenya, Postal Corporation, Multimedia University, Prime Telecoms, Pensioners, and more. Spouses and dependents are also welcome.', icon: 'users', color: '#fff503' },
         { title: 'FOSA Services', description: 'Front Office Service Activity: Access instant banking services including salary processing, ATM services, and over-the-counter transactions for your convenience.', icon: 'landmark', color: '#14B8A6' },
         { title: 'BOSA Services', description: 'Back Office Service Activity: Long-term dedicated savings and credit facilities designed to help you build lasting wealth and achieve major life milestones.', icon: 'piggy', color: '#8B5CF6' },
-        { title: 'Financial Education', description: 'Telepost offer financial literacy programs and counseling services to empower members with the knowledge and skills to make informed financial decisions.', icon: 'book', color: '#2D8E4E' }
+        { title: 'Financial Education', description: 'Telepost offer financial literacy programs and counseling services to empower members with the knowledge and skills to make informed financial decisions.', icon: 'book', color: '#008000' }
     ]
 };
 
@@ -68,8 +68,8 @@ export default function LoansSavings({ content }: { content?: LoansSavingsConten
                     <div className="space-y-10">
                         <div className="space-y-4">
                             <div className="flex gap-2">
-                                <div className="w-10 h-1 bg-[#2D8E4E]" />
-                                <div className="w-2 h-1 bg-[#E63946]" />
+                                <div className="w-10 h-1 bg-[#008000]" />
+                                <div className="w-2 h-1 bg-[#ff0000]" />
                             </div>
                             <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight" data-studio-path="loansSavings.title">
                                 {data.title}
@@ -83,7 +83,7 @@ export default function LoansSavings({ content }: { content?: LoansSavingsConten
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
                                     className={`px-8 py-3 rounded-md text-sm font-bold tracking-wider transition-all ${activeTab === tab.id
-                                        ? 'bg-[#2D8E4E] text-white shadow-lg shadow-[#2D8E4E]/20'
+                                        ? 'bg-[#008000] text-white shadow-lg shadow-[#008000]/20'
                                         : 'text-gray-600 hover:bg-gray-100'
                                         }`}
                                 >
@@ -106,7 +106,7 @@ export default function LoansSavings({ content }: { content?: LoansSavingsConten
                                     {activeTabData.features?.map((feature, idx) => (
                                         <div key={idx} className="flex gap-4 group">
                                             <div className="mt-1 flex-shrink-0">
-                                                <Plus className="w-5 h-5 text-[#2D8E4E] font-bold" />
+                                                <Plus className="w-5 h-5 text-[#008000] font-bold" />
                                             </div>
                                             <div>
                                                 <span className="font-bold text-gray-700" data-studio-path={`loansSavings.tabs.${data.tabs.findIndex(t => t.id === activeTab)}.features.${idx}.title`}>{feature.title}. </span>
@@ -120,7 +120,7 @@ export default function LoansSavings({ content }: { content?: LoansSavingsConten
 
                         <a
                             href={activeTabData.ctaLink}
-                            className="inline-block bg-[#2D8E4E] hover:bg-[#236c3b] text-white px-10 py-4 rounded-md font-bold text-sm tracking-widest transition-all hover:scale-105"
+                            className="inline-block bg-[#008000] hover:bg-[#236c3b] text-white px-10 py-4 rounded-md font-bold text-sm tracking-widest transition-all hover:scale-105"
                         >
                             {activeTabData.ctaText}
                         </a>
@@ -159,7 +159,7 @@ export default function LoansSavings({ content }: { content?: LoansSavingsConten
                             const y = Math.sin((angle * Math.PI) / 180) * radius;
                             const Icon = iconMap[feat.icon] || BookOpen;
                             const isActive = hoveredCircleIdx === idx;
-                            const featureColor = feat.color || '#2D8E4E';
+                            const featureColor = feat.color || '#008000';
 
                             return (
                                 <motion.button
@@ -202,7 +202,7 @@ export default function LoansSavings({ content }: { content?: LoansSavingsConten
                         })}
 
                         {/* Decorative background glow */}
-                        <div className="absolute w-[500px] h-[500px] bg-[#2D8E4E]/5 rounded-full blur-3xl -z-10" />
+                        <div className="absolute w-[500px] h-[500px] bg-[#008000]/5 rounded-full blur-3xl -z-10" />
                     </div>
                 </div>
             </div>
