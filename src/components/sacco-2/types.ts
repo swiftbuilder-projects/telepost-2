@@ -280,13 +280,14 @@ export interface SocialLink {
 }
 
 export interface FooterContactInfo {
-    companyName: string;
+    companyName?: string;
     address: string;
     phone: string;
-    whatsapp: string;
-    poBox: string;
-    city: string;
-    country: string;
+    whatsapp?: string;
+    poBox?: string;
+    city?: string;
+    country?: string;
+    email?: string; // from old data
 }
 
 export interface NewsletterConfig {
@@ -297,17 +298,28 @@ export interface NewsletterConfig {
 }
 
 export interface FooterContent {
-    logoImage: string;
-    tagline: string;
+    // New Structure (Preferred)
+    logoImage?: string;
+    tagline?: string;
+    services?: FooterLink[];
+    aboutLinks?: FooterLink[];
+    infoLinks?: FooterLink[];
+
+    // Old Structure (Backward Compatibility)
+    logoText?: string;
+    products?: FooterLink[];
+    company?: FooterLink[];
+    resources?: FooterLink[];
+    legal?: FooterLink[];
+    newsletter?: any;
+    regulatoryText?: string;
+
     description: string;
-    services: FooterLink[];
-    aboutLinks: FooterLink[];
-    infoLinks: FooterLink[];
     contactInfo: FooterContactInfo;
     socialLinks: SocialLink[];
     copyright: string;
-    privacyPolicyLink: string;
-    cookiePolicyLink: string;
+    privacyPolicyLink?: string;
+    cookiePolicyLink?: string;
 }
 
 // ============================================================================

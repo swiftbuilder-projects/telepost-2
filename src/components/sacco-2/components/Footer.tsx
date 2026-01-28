@@ -58,6 +58,14 @@ const socialIcons: Record<string, any> = {
 export default function Footer({ content }: { content?: FooterContent }) {
     const data = content || defaultContent;
 
+    // Backward compatibility fallbacks for old content structure
+    const logoImage = data.logoImage || '/images/templates/telepost-sacco/logo.png';
+    const services = data.services || data.products || [];
+    const aboutLinks = data.aboutLinks || data.company || [];
+    const infoLinks = data.infoLinks || data.resources || [];
+    const privacyLink = data.privacyPolicyLink || (data.legal ? data.legal.find(l => l.label.includes('Privacy'))?.href : '#');
+    const cookieLink = data.cookiePolicyLink || (data.legal ? data.legal.find(l => l.label.includes('Cookie'))?.href : '#');
+
     return (
         <footer className="bg-[#111827] pt-16 border-t border-gray-800 font-nunito" data-studio-path="footer">
             {/* Full Width Container */}
@@ -68,7 +76,7 @@ export default function Footer({ content }: { content?: FooterContent }) {
                     <div className="space-y-6">
                         <div className="flex flex-col items-start">
                             <Image
-                                src={data.logoImage}
+                                src={logoImage}
                                 alt="Telepost Sacco"
                                 width={120}
                                 height={120}
@@ -107,7 +115,7 @@ export default function Footer({ content }: { content?: FooterContent }) {
                             Products & Services
                         </h3>
                         <ul className="space-y-3">
-                            {data.services?.map((service, index) => (
+                            {services?.map((service, index) => (
                                 <li key={index}>
                                     <a
                                         href={service.href}
@@ -128,7 +136,7 @@ export default function Footer({ content }: { content?: FooterContent }) {
                             About Us
                         </h3>
                         <ul className="space-y-3">
-                            {data.aboutLinks?.slice(0, 5).map((link, index) => (
+                            {aboutLinks?.slice(0, 5).map((link, index) => (
                                 <li key={index}>
                                     <a
                                         href={link.href}
@@ -149,7 +157,7 @@ export default function Footer({ content }: { content?: FooterContent }) {
                             Info Center
                         </h3>
                         <ul className="space-y-3">
-                            {data.infoLinks?.slice(0, 5).map((link, index) => (
+                            {infoLinks?.slice(0, 5).map((link, index) => (
                                 <li key={index}>
                                     <a
                                         href={link.href}
@@ -235,8 +243,8 @@ export default function Footer({ content }: { content?: FooterContent }) {
                             {data.copyright} Powered by <span className="font-bold text-gray-200">Telepost Sacco.</span>
                         </p>
                         <div className="flex gap-6">
-                            <a href={data.privacyPolicyLink} className="hover:text-[#008000] transition-colors">Privacy policy</a>
-                            <a href={data.cookiePolicyLink} className="hover:text-[#008000] transition-colors">Cookie Policy</a>
+                            <a href={privacyLink} className="hover:text-[#008000] transition-colors">Privacy policy</a>
+                            <a href={cookieLink} className="hover:text-[#008000] transition-colors">Cookie Policy</a>
                         </div>
                     </div>
                 </div>
